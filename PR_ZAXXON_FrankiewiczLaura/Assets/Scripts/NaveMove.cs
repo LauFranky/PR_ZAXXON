@@ -17,7 +17,7 @@ public class NaveMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        desplSpeed = 10f;
+        desplSpeed = 50f;
         rotationSpeed = 150f;
     }
 

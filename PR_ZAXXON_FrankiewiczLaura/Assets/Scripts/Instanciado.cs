@@ -15,7 +15,7 @@ public class Instanciado : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        intervalo = 1f;
+        intervalo = 0.1f;
         StartCoroutine("CrearObstaculos");
         Vector3 destPos = initialPos.position;
         Vector3 despl = new Vector3(desplX, 0, 0);
@@ -40,8 +40,10 @@ public class Instanciado : MonoBehaviour
     {
         while (true)
         {
-            float randomX = Random.Range(-10f, 10f);
-            Vector3 newPos = new Vector3(randomX, initialPos.position.y, initialPos.position.z);
+            
+            float randomX = Random.Range(-20f, 20f);
+            float randomY = Random.Range(3f, 20f);
+            Vector3 newPos = new Vector3(randomX, randomY, initialPos.position.z);
             Instantiate(obstaculos, newPos, Quaternion.identity);
 
             yield return new WaitForSeconds(intervalo);
