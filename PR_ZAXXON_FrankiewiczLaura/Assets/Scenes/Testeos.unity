@@ -342,7 +342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696392368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 637342024}
@@ -678,7 +678,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e74d7222b0444a86d87f0fd2665c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaculos: {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
+  obstaculos:
+  - {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
+  - {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
+  - {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
+  - {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
+  - {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
+  obstaculo: {fileID: 8949268883047494351, guid: 4effd13933c34c84288718627ce1bb99, type: 3}
   initialPos: {fileID: 992096571}
 --- !u!4 &992096571
 Transform:
@@ -688,7 +694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992096569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 60}
+  m_LocalPosition: {x: 0, y: 3.5, z: 214.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -976,7 +982,7 @@ Transform:
   m_GameObject: {fileID: 1942672462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 40.8}
-  m_LocalScale: {x: 3, y: 1, z: 10}
+  m_LocalScale: {x: 5, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

@@ -11,7 +11,7 @@ public class NaveMove : MonoBehaviour
     //Variables para restriccion
     float limitH = 14f;
     float limitY = 20f;
-    float suelo = 0f;
+    float suelo = 0.6f;
 
     
     // Start is called before the first frame update

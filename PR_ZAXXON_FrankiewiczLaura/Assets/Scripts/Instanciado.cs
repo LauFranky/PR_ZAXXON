@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Instanciado : MonoBehaviour
 {
     float intervalo;
-    [SerializeField] GameObject obstaculos;
+    [SerializeField] GameObject[] obstaculos;
+    [SerializeField] GameObject obstaculo;
     [SerializeField] Transform initialPos;
 
     float desplX = 5f;
@@ -44,7 +45,12 @@ public class Instanciado : MonoBehaviour
             float randomX = Random.Range(-20f, 20f);
             float randomY = Random.Range(3f, 20f);
             Vector3 newPos = new Vector3(randomX, randomY, initialPos.position.z);
-            Instantiate(obstaculos, newPos, Quaternion.identity);
+            Instantiate(obstaculo, newPos, Quaternion.identity);
+
+
+            /* Genero un número aleatorio para elegir obstaculos*/
+            int numAl = Random.Range(0, obstaculos.Length);
+            Instantiate(obstaculos[numAl], newPos, Quaternion.identity);
 
             yield return new WaitForSeconds(intervalo);
         }
