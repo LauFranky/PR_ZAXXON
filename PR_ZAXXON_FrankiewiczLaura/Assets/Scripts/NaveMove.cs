@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NaveMove : MonoBehaviour
 {
+    public Transform navePos;
     [SerializeField] float desplSpeed;
     [SerializeField] float rotationSpeed;
+    [SerializeField] GameObject laser;
+
+    /*itGame initGame;*/
+
 
 
     //Variables para restriccion
-    float limitH = 14f;
-    float limitY = 20f;
+    float limitH = 20f;
+    float limitY = 25f;
     float suelo = 0.6f;
 
     
@@ -26,7 +33,7 @@ public class NaveMove : MonoBehaviour
     void Update()
     {
         MoverNave();
-
+        Disparos();
     }
 
     /*
@@ -38,11 +45,25 @@ public class NaveMove : MonoBehaviour
        else if(posX < -limitH
        */
 
+    //Disparos//
+    void Disparos()
+    {
 
+        float desplZ = 1f;
+        Vector3 despl = new Vector3(0, 0, desplZ);
+        Vector3 destPos = navePos.position;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(laser, destPos, Quaternion.identity);
+            destPos = destPos + despl;
+
+
+        }
+    }
     // Movimientos de la nave
     void MoverNave()
     {
-        float desplX = Input.GetAxis("Horizontal");
+    float desplX = Input.GetAxis("Horizontal");
     float desplY = Input.GetAxis("Vertical");
     float desplR = Input.GetAxis("Rotation");
     float posX = transform.position.x;
@@ -55,9 +76,19 @@ public class NaveMove : MonoBehaviour
 
         if ((posY < limitY || desplY < 0f) && (posY > suelo || desplY > 0f))
         {
-    transform.Translate(Vector3.up * Time.deltaTime * desplSpeed * desplY, Space.World);
+            transform.Translate(Vector3.up * Time.deltaTime * desplSpeed * desplY, Space.World);
         }
 
-transform.Rotate(0f, 0f, desplR * Time.deltaTime * -rotationSpeed);
+    transform.Rotate(0f, 0f, desplR * Time.deltaTime * -rotationSpeed);
     }
+
+   private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            
+            SceneManager.LoadScene("Space");
+        }
+    }
+
 }

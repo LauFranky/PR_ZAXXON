@@ -7,7 +7,6 @@ public class Instanciado : MonoBehaviour
 {
     float intervalo;
     [SerializeField] GameObject[] obstaculos;
-    [SerializeField] GameObject obstaculo;
     [SerializeField] Transform initialPos;
 
     float desplX = 5f;
@@ -16,7 +15,7 @@ public class Instanciado : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        intervalo = 0.1f;
+        intervalo = 0.5f;
         StartCoroutine("CrearObstaculos");
         Vector3 destPos = initialPos.position;
         Vector3 despl = new Vector3(desplX, 0, 0);
@@ -37,6 +36,22 @@ public class Instanciado : MonoBehaviour
     {
         
     }
+
+    float RandomExclude(float excluir, float rango)
+    {
+        float returnNumber = excluir;
+        float numIni = excluir - rango;
+        float numFin = excluir + rango;
+
+        while (returnNumber > numIni && returnNumber < numFin)
+        {
+            returnNumber = Random.Range(0f, 5f);
+            float returnNumber2 = Random.Range(returnNumber, 10f);
+        }
+        return returnNumber;
+    }
+
+
     IEnumerator CrearObstaculos()
     {
         while (true)
@@ -45,7 +60,8 @@ public class Instanciado : MonoBehaviour
             float randomX = Random.Range(-20f, 20f);
             float randomY = Random.Range(3f, 20f);
             Vector3 newPos = new Vector3(randomX, randomY, initialPos.position.z);
-            Instantiate(obstaculo, newPos, Quaternion.identity);
+            int elemento = Random.Range(0, obstaculos.Length);
+            Instantiate(obstaculos[elemento], newPos, Quaternion.identity);
 
 
             /* Genero un número aleatorio para elegir obstaculos*/
