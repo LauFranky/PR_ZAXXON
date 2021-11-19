@@ -65,8 +65,8 @@ public class Instanciado : MonoBehaviour
 
 
             /* Genero un número aleatorio para elegir obstaculos*/
-            int numAl = Random.Range(0, obstaculos.Length);
-            Instantiate(obstaculos[numAl], newPos, Quaternion.identity);
+            //int numAl = Random.Range(0, obstaculos.Length);
+           //Instantiate(obstaculos[numAl], newPos, Quaternion.identity);
 
             yield return new WaitForSeconds(intervalo);
         }

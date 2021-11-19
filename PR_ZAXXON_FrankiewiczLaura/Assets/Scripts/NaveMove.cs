@@ -26,7 +26,6 @@ public class NaveMove : MonoBehaviour
     void Start()
     {
         desplSpeed = 50f;
-        rotationSpeed = 150f;
 
 
        if(GameManager.playerLifes <= 0)
@@ -88,7 +87,7 @@ public class NaveMove : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime * desplSpeed * desplY, Space.World);
         }
 
-    transform.Rotate(0f, 0f, desplR * Time.deltaTime * -rotationSpeed);
+        transform.rotation = Quaternion.Euler(desplY * -30, 0, desplX * -30);
     }
 
    private void OnTriggerEnter(Collider other)
@@ -96,7 +95,7 @@ public class NaveMove : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             GameManager.playerLifes--;
-            if(GameManager.playerLifes == 0)
+            if(GameManager.playerLifes <= 0)
             {
                 SceneManager.LoadScene(6);
             }
