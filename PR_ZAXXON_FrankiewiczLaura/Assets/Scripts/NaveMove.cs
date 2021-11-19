@@ -12,7 +12,8 @@ public class NaveMove : MonoBehaviour
     [SerializeField] GameObject laser;
 
     /*itGame initGame;*/
-
+    [SerializeField] Image lifesImage;
+    [SerializeField] Sprite[] lifesSprite;
 
 
     //Variables para restriccion
@@ -26,6 +27,9 @@ public class NaveMove : MonoBehaviour
     {
         desplSpeed = 50f;
         rotationSpeed = 150f;
+
+        int lifes = GameManager.playerLifes;
+        lifesImage.sprite = lifesSprite[lifes];
     }
 
 
@@ -86,8 +90,17 @@ public class NaveMove : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
+            GameManager.playerLifes--;
+            if(GameManager.playerLifes == 0)
+            {
+                SceneManager.LoadScene(3);
+            }
+            else
+            {
+                int currentScene = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentScene);
+            }
             
-            SceneManager.LoadScene("Space");
         }
     }
 

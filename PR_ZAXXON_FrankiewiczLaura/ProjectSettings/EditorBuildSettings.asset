@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Space.unity
+    path: Assets/Scenes/Levels/Space.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Sky.unity
+    path: Assets/Scenes/Levels/Sky.unity
     guid: b11d48d6ae37f474b9c9e70587126011
   - enabled: 1
-    path: Assets/Scenes/City.unity
+    path: Assets/Scenes/Levels/City.unity
     guid: 81f248c1b6a79b044b35392d6e3a6d77
+  - enabled: 1
+    path: Assets/Scenes/Menu/Inicio.unity
+    guid: 948d178859d2f0e4396d62cd84ac2c78
+  - enabled: 1
+    path: Assets/Scenes/Menu/Options.unity
+    guid: 6fa466a722eebbe4997c96577598f1b8
+  - enabled: 1
+    path: Assets/Scenes/Menu/High Score.unity
+    guid: e18ae6f7f06819347bccbcfaabac98a6
   m_configObjects: {}
