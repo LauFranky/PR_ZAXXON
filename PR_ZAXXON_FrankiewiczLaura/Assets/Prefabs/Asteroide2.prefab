@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6348756833689131931}
   - component: {fileID: 5875963905810757016}
   - component: {fileID: 6882336331774174540}
+  - component: {fileID: -574526766243325342}
   m_Layer: 6
   m_Name: Asteroide2
   m_TagString: Untagged
@@ -139,3 +140,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 15.118694
   m_Center: {x: 2.3999977, y: -0.18131256, z: 0}
+--- !u!54 &-574526766243325342
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003439175660962081}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

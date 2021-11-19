@@ -28,7 +28,12 @@ public class NaveMove : MonoBehaviour
         desplSpeed = 50f;
         rotationSpeed = 150f;
 
-        int lifes = GameManager.playerLifes;
+
+       if(GameManager.playerLifes <= 0)
+        {
+            GameManager.playerLifes = 3;
+        }
+       int lifes = GameManager.playerLifes;
         lifesImage.sprite = lifesSprite[lifes];
     }
 
@@ -93,7 +98,7 @@ public class NaveMove : MonoBehaviour
             GameManager.playerLifes--;
             if(GameManager.playerLifes == 0)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(6);
             }
             else
             {
