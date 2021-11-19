@@ -26,8 +26,14 @@ public class Laser : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        Destroy(gameObject);
-        
+        if(other.gameObject.tag == "rompible")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
