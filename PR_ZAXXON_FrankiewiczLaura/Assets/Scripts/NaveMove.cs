@@ -15,6 +15,8 @@ public class NaveMove : MonoBehaviour
     [SerializeField] Image lifesImage;
     [SerializeField] Sprite[] lifesSprite;
 
+    [SerializeField] GameObject cannon;
+
 
     //Variables para restriccion
     float limitH = 20f;
@@ -58,13 +60,13 @@ public class NaveMove : MonoBehaviour
     void Disparos()
     {
 
-        float desplZ = 1f;
-        Vector3 despl = new Vector3(0, 0, desplZ);
-        Vector3 destPos = navePos.position;
+        
+        
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(laser, destPos, Quaternion.identity);
-            destPos = destPos + despl;
+            Instantiate(laser, cannon.transform.position, Quaternion.identity);
+            
 
 
         }
