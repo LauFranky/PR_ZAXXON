@@ -33,6 +33,7 @@ public class NaveMove : MonoBehaviour
 
        if(GameManager.playerLifes <= 0)
         {
+            SceneManager.LoadScene(3);
             GameManager.playerLifes = 3;
         }
        int lifes = GameManager.playerLifes;
@@ -56,8 +57,8 @@ public class NaveMove : MonoBehaviour
        else if(posX < -limitH
        */
 
-    //Disparos//
-    void Disparos()
+//Disparos//
+void Disparos()
     {
 
         
