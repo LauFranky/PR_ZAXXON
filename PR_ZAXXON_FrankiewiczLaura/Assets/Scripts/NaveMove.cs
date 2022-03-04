@@ -23,7 +23,11 @@ public class NaveMove : MonoBehaviour
     float limitY = 25f;
     float suelo = 0.6f;
 
-    
+    AudioSource audioSource;
+    [SerializeField] AudioClip disparo;
+    [SerializeField] AudioClip explosionAudio;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,10 @@ public class NaveMove : MonoBehaviour
         }
        int lifes = GameManager.playerLifes;
         lifesImage.sprite = lifesSprite[lifes];
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 1f;
+
     }
 
 
@@ -60,16 +68,11 @@ public class NaveMove : MonoBehaviour
 //Disparos//
 void Disparos()
     {
-
-        
-        
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(laser, cannon.transform.position, Quaternion.identity);
-            
-
-
+            audioSource.PlayOneShot(disparo, 1f);
         }
     }
     // Movimientos de la nave

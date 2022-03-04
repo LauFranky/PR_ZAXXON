@@ -7,10 +7,16 @@ public class Laser : MonoBehaviour
 {
     float speed;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip explosionAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         speed = 80f;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 1f;
     }
 
     // Update is called once per frame
@@ -28,12 +34,17 @@ public class Laser : MonoBehaviour
     {
         if(other.gameObject.tag == "rompible")
         {
+            audioSource.PlayOneShot(explosionAudio, 1f);
             Destroy(other.gameObject);
             Destroy(gameObject);
+            
         }
         else
         {
+            audioSource.PlayOneShot(explosionAudio, 1f);
             Destroy(gameObject);
+           
         }
+
     }
 }
