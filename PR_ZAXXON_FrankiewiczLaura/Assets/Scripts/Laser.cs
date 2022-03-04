@@ -34,15 +34,15 @@ public class Laser : MonoBehaviour
     {
         if(other.gameObject.tag == "rompible")
         {
-            audioSource.PlayOneShot(explosionAudio, 1f);
+            audioSource.Play();
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            Destroy(gameObject, 5f);
             
         }
         else
         {
             audioSource.PlayOneShot(explosionAudio, 1f);
-            Destroy(gameObject);
+            Destroy(gameObject, 5f);
            
         }
 

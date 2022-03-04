@@ -25,7 +25,6 @@ public class NaveMove : MonoBehaviour
 
     AudioSource audioSource;
     [SerializeField] AudioClip disparo;
-    [SerializeField] AudioClip explosionAudio;
 
 
     // Start is called before the first frame update
@@ -104,7 +103,7 @@ void Disparos()
             GameManager.playerLifes--;
             if(GameManager.playerLifes == 0)
             {
-                SceneManager.LoadScene(6);
+                Invoke("Morir", 3f);
             }
             else
             {
@@ -115,5 +114,9 @@ void Disparos()
         }
     }
 
+    public void Morir()
+    {
+        SceneManager.LoadScene(6);
+    } 
 
 }
