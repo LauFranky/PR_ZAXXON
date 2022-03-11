@@ -45,14 +45,11 @@ public class InitGame : MonoBehaviour
         score.text = "score: " + puntos;
     }
 
-
-
-    
     IEnumerator contador()
     {
         while (true)
         {
-            print(hora.ToString("D2") + ":" + minuto.ToString("D2") + ":" + numero.ToString("D2"));
+            //print(hora.ToString("D2") + ":" + minuto.ToString("D2") + ":" + numero.ToString("D2"));
             numero++;
             score.text = "Tiempo Sobrevivido " + hora.ToString("D2") + ":" + minuto.ToString("D2") + ":" + numero.ToString("D2");
             yield return new WaitForSeconds(1f);

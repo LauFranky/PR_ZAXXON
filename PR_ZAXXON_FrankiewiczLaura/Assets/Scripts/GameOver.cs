@@ -13,6 +13,7 @@ public class GameOver : MonoBehaviour
     public void IniciarJuego()
     {
         GameManager.playerLifes = 3;
+        GameManager.alive = true;
         SceneManager.LoadScene(0);
     }
 }

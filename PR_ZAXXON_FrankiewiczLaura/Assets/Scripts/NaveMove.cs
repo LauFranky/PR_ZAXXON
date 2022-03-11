@@ -17,6 +17,10 @@ public class NaveMove : MonoBehaviour
 
     [SerializeField] GameObject cannon;
 
+    public GameObject explosion;
+
+    [SerializeField] Renderer rend;
+
 
     //Variables para restriccion
     float limitH = 20f;
@@ -32,13 +36,14 @@ public class NaveMove : MonoBehaviour
     {
         desplSpeed = 50f;
 
-
+        /*
 
        if(GameManager.playerLifes <= 0)
         {
             SceneManager.LoadScene(3);
             GameManager.playerLifes = 3;
         }
+        */
        int lifes = GameManager.playerLifes;
         lifesImage.sprite = lifesSprite[lifes];
 
@@ -77,6 +82,9 @@ void Disparos()
     // Movimientos de la nave
     void MoverNave()
     {
+        if (!GameManager.alive)
+            return;
+
     float desplX = Input.GetAxis("Horizontal");
     float desplY = Input.GetAxis("Vertical");
     float desplR = Input.GetAxis("Rotation");
@@ -101,8 +109,13 @@ void Disparos()
         if (other.gameObject.layer == 6)
         {
             GameManager.playerLifes--;
+            
             if(GameManager.playerLifes == 0)
             {
+                GameManager.alive = false;
+                rend.enabled = false;
+                Instantiate(explosion, transform.position, transform.rotation);
+                print("Me he muerto");
                 Invoke("Morir", 3f);
             }
             else
@@ -116,7 +129,8 @@ void Disparos()
 
     public void Morir()
     {
-        SceneManager.LoadScene("GameOver");
+        
+       SceneManager.LoadScene("GameOver");
        
     } 
 

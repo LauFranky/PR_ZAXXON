@@ -16,7 +16,11 @@ public class ObstaculosMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.back * Time.deltaTime * speed);
+        if(GameManager.alive)
+        {
+            transform.Translate(Vector3.back * Time.deltaTime * speed);
+        }
+        
 
         float posZ = transform.position.z;
         if(posZ < -20)

@@ -27,4 +27,9 @@ public class MenuInicio : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+    public void salir()
+    {
+        Application.Quit();
+    }
 }

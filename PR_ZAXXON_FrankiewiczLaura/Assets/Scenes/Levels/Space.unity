@@ -327,6 +327,8 @@ MonoBehaviour:
   - {fileID: -4997167023504409373, guid: beeda1c149a2bfa4ab0ffb15bcb6d688, type: 3}
   - {fileID: 9200775849295203296, guid: beeda1c149a2bfa4ab0ffb15bcb6d688, type: 3}
   cannon: {fileID: 0}
+  explosion: {fileID: 0}
+  rend: {fileID: 0}
   disparo: {fileID: 0}
 --- !u!65 &696392371
 BoxCollider:
@@ -769,6 +771,85 @@ Transform:
   m_Father: {fileID: 1451107224872391470}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1766044950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766044953}
+  - component: {fileID: 1766044952}
+  - component: {fileID: 1766044951}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1766044951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766044950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.6801888, b: 0.28773582, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3eb84945893c133409e876e12b1bb2da, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &1766044952
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766044950}
+  m_CullTransparentMesh: 1
+--- !u!224 &1766044953
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766044950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1935182885}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19, y: -222}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1884951809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1098,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1884951810}
+  - {fileID: 1766044953}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1249,6 +1331,8 @@ MonoBehaviour:
   - {fileID: -4997167023504409373, guid: beeda1c149a2bfa4ab0ffb15bcb6d688, type: 3}
   - {fileID: 9200775849295203296, guid: beeda1c149a2bfa4ab0ffb15bcb6d688, type: 3}
   cannon: {fileID: 1685590122}
+  explosion: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
+  rend: {fileID: 405885932173639592}
   disparo: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!114 &2263216015925430679
 MonoBehaviour:
@@ -1262,8 +1346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c17911b486a604ba35b9627ad5e99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatoSpeed: 30
-  alive: 1
+  score: {fileID: 1766044951}
+  gatete: {fileID: 0}
+  desplSpeed: 0
+  speed: 80
 --- !u!82 &2263216015925430680
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1275,7 +1361,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3407545959815487171, guid: faef6a4ba5cb99145bd16876bff74f9e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
