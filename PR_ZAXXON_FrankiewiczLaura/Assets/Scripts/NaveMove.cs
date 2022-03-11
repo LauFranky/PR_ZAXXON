@@ -116,7 +116,8 @@ void Disparos()
 
     public void Morir()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("GameOver");
+       
     } 
 
 }
