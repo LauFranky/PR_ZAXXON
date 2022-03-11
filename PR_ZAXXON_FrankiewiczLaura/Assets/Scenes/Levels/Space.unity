@@ -328,7 +328,6 @@ MonoBehaviour:
   - {fileID: 9200775849295203296, guid: beeda1c149a2bfa4ab0ffb15bcb6d688, type: 3}
   cannon: {fileID: 0}
   disparo: {fileID: 0}
-  explosionAudio: {fileID: 0}
 --- !u!65 &696392371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -496,7 +495,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1251,7 +1250,6 @@ MonoBehaviour:
   - {fileID: 9200775849295203296, guid: beeda1c149a2bfa4ab0ffb15bcb6d688, type: 3}
   cannon: {fileID: 1685590122}
   disparo: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
-  explosionAudio: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
 --- !u!114 &2263216015925430679
 MonoBehaviour:
   m_ObjectHideFlags: 0
